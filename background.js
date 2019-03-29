@@ -5,7 +5,7 @@ chrome.tabs.onCreated.addListener(function() {
     if(tabs.length <= allowedTabs) {
       return;
     }
-    id = tabs[tabs.length - 1].id;
+    id = tabs[Math.floor(Math.random() * tabs.length)].id;
     chrome.tabs.remove(id, function() {});
   });
 });
